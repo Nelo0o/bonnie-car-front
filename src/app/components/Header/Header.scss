@@ -1,0 +1,11 @@
+@import "src/app/scss/global";
+
+header {
+  background-color: $clr-black;
+  padding: 20px;
+  text-align: center;
+
+  h1 {
+    color: $clr-white;
+  }
+}
