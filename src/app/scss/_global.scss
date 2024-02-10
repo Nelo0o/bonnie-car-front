@@ -1,3 +1,42 @@
+// Colors
+
+$clr-white: #FFFFFF;
+$clr-black: #282727;
+$clr-yellow: #FFDD00;
+$clr-gray: #444444;
+
+// Global styles
+
+.wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media screen and (min-width: 768px) {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+
+.page-width {
+  max-width: 1536px;
+  margin: 0 auto;
+}
+
+body {
+  background: $clr-black;
+}
+
+// Resets
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
 button {
   background: none;
   color: inherit;
@@ -7,9 +46,3 @@ button {
   cursor: pointer;
   outline: inherit;
 }
-
-// Colors
-
-$clr-white: #FFFFFF;
-$clr-black: #000000;
-$clr-yellow: #FFDD00;

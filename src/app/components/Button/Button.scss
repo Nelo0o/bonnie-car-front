@@ -1,0 +1,18 @@
+@import 'src/app/scss/global';
+
+.primary-btn {
+  background: $clr-yellow;
+  color: $clr-black;
+  font-weight: bold;
+  width: fit-content;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: solid 1px $clr-black;
+  transition: all .1s;
+
+  &:hover {
+    background: $clr-black;
+    color: $clr-yellow;
+    border-color: $clr-yellow;
+  }
+}

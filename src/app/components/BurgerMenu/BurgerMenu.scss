@@ -1,4 +1,5 @@
 @import "src/app/scss/global";
+@import "src/app/scss/functions";
 
 #checkbox {
   display: none;
@@ -29,7 +30,7 @@
 }
 
 .burger-menu {
-  position: absolute;
+  position: fixed;
   background: $clr-black;
   top: 0;
   right: 0;
@@ -47,16 +48,17 @@
     left: 0;
   }
 
-  .burger-menu__nav {
+  &__nav {
     display: flex;
     flex-direction: column;
     gap: 20px;
     font-size: 24px;
 
-    .burger-menu__link {
+    &__link {
       margin-bottom: 5px;
       text-decoration: none;
       color: $clr-white;
+      white-space: nowrap;
     }
   }
 }
@@ -78,6 +80,45 @@
       transform-origin: right;
       transition-duration: .3s;
       z-index: 2;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .toggle {
+    display: none;
+  }
+
+  .burger-menu {
+    position: initial;
+    background: transparent;
+
+    &__nav {
+      flex-direction: row;
+      font-size: pxToRem(20);
+      gap: 30px;
+
+      &__link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5px;
+
+        &::after {
+          content: '';
+          width: 0;
+          height: 1px;
+          background: #FFDD00;
+          margin-top: 5px;
+          transition: width .2s;
+        }
+
+        &:hover {
+          &::after {
+            width: 100%;
+          }
+        }
+      }
     }
   }
 }

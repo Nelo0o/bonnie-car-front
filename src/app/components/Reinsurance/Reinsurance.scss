@@ -1,0 +1,90 @@
+@import 'src/app/scss/global';
+@import 'src/app/scss/functions';
+
+.reinsurance {
+  background: $clr-gray;
+  margin-bottom: 60px;
+
+  &__infos {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: $clr-white;
+
+    h2 {
+      font-size: pxToRem(24);
+      font-weight: bold;
+      color: $clr-white;
+      text-align: center;
+      line-height: 150%;
+      margin-bottom: 50px;
+
+      span {
+        color: $clr-yellow;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &::after {
+          content: url("/assets/icons/sign.svg");
+          display: block;
+          width: 100%;
+          height: 50%;
+        }
+      }
+    }
+
+    &__card {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+
+      li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        line-height: 150%;
+        gap: 10px;
+
+        h3 {
+          font-size: pxToRem(20);
+        }
+
+        img {
+          width: 70px;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 120px;
+
+    &__infos {
+      padding-top: 50px;
+      padding-bottom: 50px;
+
+      h2 {
+        margin-bottom: 80px;
+
+        span {
+          display: inline-block;
+          position: relative;
+          width: fit-content;
+
+          &::after {
+            position: absolute;
+            left: 85px;
+            top: 25px;
+          }
+        }
+      }
+
+      &__card {
+        flex-direction: row;
+      }
+    }
+  }
+}

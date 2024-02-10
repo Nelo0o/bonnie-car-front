@@ -21,7 +21,7 @@ const images = [
 
 const PartnersSlide = () => {
   return (
-     <section className="slider">
+     <div className="slider">
        <div className="slide-track">
          {images.map((image, index) => (
             <div className="slide" key={index}>
@@ -29,7 +29,7 @@ const PartnersSlide = () => {
             </div>
          ))}
        </div>
-     </section>
+     </div>
   );
 };
 
