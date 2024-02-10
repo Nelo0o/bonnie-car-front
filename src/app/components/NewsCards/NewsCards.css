@@ -1,0 +1,96 @@
+.box:hover {
+  animation: bounce 1s;
+}
+@keyframes bounce {
+  0%,
+  20%,
+  60%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  80% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.box {
+  width: 300px;
+  background: rgba(207, 175, 163, 0.404);
+  box-shadow: 3px 4px 3px 1px black;
+  border-radius: 15px;
+}
+
+.image-wrapper {
+  overflow: hidden;
+}
+
+.moto_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+}
+.price_label {
+  position: absolute;
+  bottom: 28%;
+  background: #ffff;
+  left: 35%;
+  transform: translateX(-50%);
+  transform: rotatez(10deg);
+  width: 100px;
+  height: 50px;
+  color: black;
+  font-weight: 500;
+  font-size: 2rem;
+  padding-left: 20px;
+  padding-top: 10px;
+  box-shadow: 1px 1px 5px #000;
+}
+.box h3 {
+  font-size: 20px;
+  padding-left: 1rem;
+  padding-bottom: 0;
+}
+.box p {
+  font-size: 16px;
+  margin: 0px;
+}
+.card_text {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10rem;
+  grid-row-gap: 10px;
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+.card_text {
+  .cc {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .km {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .annee {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+}
+
+.etoilesprix {
+  padding: 0px 0px 10px 10px;
+}
