@@ -2,12 +2,24 @@ import Link from 'next/link'
 import {useState} from 'react'
 import './BurgerMenu.scss'
 
+const NavLink = ({href, text}) => (
+   <Link className="burger-menu__nav__link" href={href}>{text}</Link>
+);
+
 const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
   
   const toggleMenu = () => {
     setIsOpen(!isOpen)
   }
+  
+  const navLinks = [
+    {href: "/", text: "Accueil"},
+    {href: "/", text: "Nos véhicules"},
+    {href: "/", text: "Estimation"},
+    {href: "/", text: "Services"},
+    {href: "/", text: "A propos"},
+  ];
   
   return (
      <>
@@ -20,11 +32,9 @@ const BurgerMenu = () => {
        
        <div className={`burger-menu ${isOpen ? 'open' : ''}`}>
          <nav className={`burger-menu__nav`}>
-           <Link className="burger-menu__nav__link" href="/">Accueil</Link>
-           <Link className="burger-menu__nav__link" href="/">Nos véhicules</Link>
-           <Link className="burger-menu__nav__link" href="/">Estimation</Link>
-           <Link className="burger-menu__nav__link" href="/">Services</Link>
-           <Link className="burger-menu__nav__link" href="/">A propos</Link>
+           {navLinks.map((link, index) => (
+              <NavLink key={index} href={link.href} text={link.text}/>
+           ))}
          </nav>
        </div>
      </>

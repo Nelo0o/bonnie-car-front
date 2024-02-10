@@ -19,18 +19,18 @@ const images = [
   'assets/images/vivocaz.png',
 ];
 
-const PartnersSlide = () => {
-  return (
-     <div className="slider">
-       <div className="slide-track">
-         {images.map((image, index) => (
-            <div className="slide" key={index}>
-              <Image className="slide__img" src={`/${image}`} alt={`partner-${index}`} width={250} height={250}/>
-            </div>
-         ))}
-       </div>
+const Slide = ({src, alt}) => (
+   <div className="slide">
+     <Image className="slide__img" src={src} alt={alt} width={250} height={250}/>
+   </div>
+);
+
+const PartnersSlide = () => (
+   <div className="slider">
+     <div className="slide-track">
+       {images.map((image, index) => <Slide key={index} src={`/${image}`} alt={`partner-${index}`}/>)}
      </div>
-  );
-};
+   </div>
+);
 
 export default PartnersSlide;

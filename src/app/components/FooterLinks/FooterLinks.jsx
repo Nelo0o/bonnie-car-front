@@ -3,35 +3,53 @@ import './FooterLinks.scss';
 import Link from "next/link";
 import Image from "next/image";
 
+const LinksGroup = ({title, links}) => (
+   <li>
+     <h3>{title}</h3>
+     {links.map((link, index) => <Link key={index} href={link.href}>{link.text}</Link>)}
+   </li>
+);
+
+const IconLink = ({href, src, alt, text}) => (
+   <Link href={href}>
+     <Image src={src} alt={alt} width={50} height={50}/>
+     {text}
+   </Link>
+);
+
 const FooterLinks = () => {
+  const usefulLinks = [
+    {href: '#', text: 'Nos véhicules'},
+    {href: '#', text: 'À propos'},
+    {href: '#', text: 'Comment ça marche'},
+    {href: '#', text: 'Blog'},
+  ];
+  
+  const infoLinks = [
+    {href: '#', text: 'Mentions légales'},
+    {href: '#', text: 'Politique de confidentialité'},
+    {href: '#', text: 'Politique de retours'},
+    {href: '#', text: 'CGV'},
+  ];
+  
+  const accountLinks = [
+    {href: '#', text: 'Se connecter'},
+    {href: '#', text: 'Se déconnecter'},
+  ];
+  
+  const addressText = 'Bonnie&Car 18 rue Jules Vallès Paris 75011 France';
+  
   return (
      <div className="container-links">
        <ul className="container-links__links">
-         <li>
-           <h3>Liens utiles</h3>
-           <Link href={'#'}>Nos véhicules</Link>
-           <Link href={'#'}>À propos</Link>
-           <Link href={'#'}>Comment ça marche</Link>
-           <Link href={'#'}>Blog</Link>
-         </li>
-         <li>
-           <h3>Informations pratiques</h3>
-           <Link href={'#'}>Mentions légales</Link>
-           <Link href={'#'}>Politique de confidentialité</Link>
-           <Link href={'#'}>Politique de retours</Link>
-           <Link href={'#'}>CGV</Link>
-         </li>
-         <li>
-           <h3>Mon compte</h3>
-           <Link href={'#'}>Se connecter</Link>
-           <Link href={'#'}>Se déconnecter</Link>
-         </li>
+         <LinksGroup title="Liens utiles" links={usefulLinks}/>
+         <LinksGroup title="Informations pratiques" links={infoLinks}/>
+         <LinksGroup title="Mon compte" links={accountLinks}/>
          <li>
            <h3>Nous contacter</h3>
-           <Link href={'#'}><Image src={"/assets/icons/location.svg"} alt={"location"} width={50} height={50}/>Bonnie&Car 18 rue Jules Vallès Paris 75011
-                                                                               France</Link>
-           <Link href={'tel:0975185648'}><Image src={"/assets/icons/phone.svg"} alt={"phone"} width={50} height={50}/>+ (0)9 75 18 56 48</Link>
-           <Link href={'mailto:contact@bonnieandcar.com'}><Image src={"/assets/icons/mail.svg"} alt={"mail"} width={50} height={50}/>contact@bonnieandcar.com</Link>
+           <IconLink href="#" src="/assets/icons/location.svg" alt="location" text={addressText}/>
+           <IconLink href="tel:0975185648" src="/assets/icons/phone.svg" alt="phone" text="+ (0)9 75 18 56 48"/>
+           <IconLink href="mailto:contact@bonnieandcar.com" src="/assets/icons/mail.svg" alt="mail" text="contact@bonnieandcar.com"/>
          </li>
        </ul>
      </div>

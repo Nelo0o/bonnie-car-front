@@ -2,24 +2,26 @@ import React from 'react';
 import './Form.scss';
 import Button from "@/app/components/Button/Button";
 
+const InputField = ({type, name, placeholder}) => (
+   <div>
+     <label style={{display: "none"}}>{name}</label>
+     <input type={type} name={name.toLowerCase()} placeholder={placeholder} required/>
+   </div>
+);
+
+const TextArea = ({name, placeholder}) => (
+   <div>
+     <label style={{display: "none"}}>{name}</label>
+     <textarea name={name.toLowerCase()} placeholder={placeholder} required/>
+   </div>
+);
+
 const Form = () => (
    <form>
-     <div>
-       <label style={{ display: "none" }}>Nom</label>
-       <input type="text" name="name" placeholder="NOM" required />
-     </div>
-     <div>
-       <label style={{ display: "none" }}>Email</label>
-       <input type="email" name="email" placeholder="ADRESSE MAIL" required />
-     </div>
-     <div>
-       <label style={{ display: "none" }}>Téléphone</label>
-       <input type="tel" name="phone" placeholder="TELEPHONE" required />
-     </div>
-     <div>
-       <label style={{ display: "none" }}>Message</label>
-       <textarea name="message" placeholder="MESSAGE" required />
-     </div>
+     <InputField type="text" name="Nom" placeholder="NOM"/>
+     <InputField type="email" name="Email" placeholder="ADRESSE MAIL"/>
+     <InputField type="tel" name="Téléphone" placeholder="TELEPHONE"/>
+     <TextArea name="Message" placeholder="MESSAGE"/>
      <Button buttonText="Envoyer"/>
    </form>
 );
