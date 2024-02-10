@@ -20,11 +20,11 @@ const BurgerMenu = () => {
        
        <div className={`burger-menu ${isOpen ? 'open' : ''}`}>
          <nav className={`burger-menu__nav`}>
-           <Link className="burger-menu__link" href="/">Accueil</Link>
-           <Link className="burger-menu__link" href="/">Nos véhicules</Link>
-           <Link className="burger-menu__link" href="/">Estimation</Link>
-           <Link className="burger-menu__link" href="/">Services</Link>
-           <Link className="burger-menu__link" href="/">A propos</Link>
+           <Link className="burger-menu__nav__link" href="/">Accueil</Link>
+           <Link className="burger-menu__nav__link" href="/">Nos véhicules</Link>
+           <Link className="burger-menu__nav__link" href="/">Estimation</Link>
+           <Link className="burger-menu__nav__link" href="/">Services</Link>
+           <Link className="burger-menu__nav__link" href="/">A propos</Link>
          </nav>
        </div>
      </>

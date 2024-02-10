@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const Header = () => {
   return (
-     <header>
+     <header className="wrapper">
        <>
          <BurgerMenu/>
          <Image src={"/assets/icons/account.svg"} alt={"account-logo"} width={200} height={200}/>
