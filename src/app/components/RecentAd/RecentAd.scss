@@ -1,0 +1,31 @@
+@import '/src/app/scss/global';
+@import '/src/app/scss/functions';
+
+.recent-ad {
+  padding-top: 60px;
+  text-align: center;
+
+  h2 {
+    color: $clr-white;
+    font-size: pxToRem(24);
+    font-weight: bold;
+    margin-bottom: 60px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow: scroll;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-top: 60px;
+
+    &__wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      overflow: initial;
+    }
+  }
+}

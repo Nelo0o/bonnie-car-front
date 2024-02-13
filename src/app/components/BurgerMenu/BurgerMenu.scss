@@ -52,7 +52,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    font-size: 24px;
+    font-size: pxToRem(20);
 
     &__link {
       margin-bottom: 5px;
@@ -95,8 +95,8 @@
 
     &__nav {
       flex-direction: row;
-      font-size: pxToRem(20);
-      gap: 30px;
+      font-size: pxToRem(16);
+      gap: 50px;
 
       &__link {
         display: flex;

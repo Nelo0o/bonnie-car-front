@@ -1,0 +1,8 @@
+@import '/src/app/scss/global';
+@import '/src/app/scss/functions';
+
+.main-section {
+  background: url("/assets/images/main-background.png") no-repeat;
+  background-size: cover;
+  height: 100vh;
+}

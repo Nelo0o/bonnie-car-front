@@ -1,12 +1,11 @@
-import { Inter } from "next/font/google";
 import "./scss/normalize.scss"
+import "@fontsource/poppins";
+import "@fontsource/roboto";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export default function RootLayout({ children }) {
+export default function RootLayout({children}) {
   return (
-    <html lang="fr">
-    <body className={`${inter.className}`}>{children}</body>
-    </html>
+     <html lang="fr">
+     <body>{children}</body>
+     </html>
   );
 }

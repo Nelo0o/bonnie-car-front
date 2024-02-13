@@ -1,0 +1,101 @@
+@import '/src/app/scss/global';
+@import '/src/app/scss/functions';
+
+.ad-card {
+  background: $clr-white;
+  width: calc(100% - 3px);
+  flex-shrink: 0;
+  height: fit-content;
+  border-radius: 24px;
+  transition: all .1s;
+  border: 3px solid $clr-black;
+
+  &__wrapper {
+
+    &__img-container {
+      width: 100%;
+      border-radius: inherit;
+
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+      }
+    }
+
+    &__content {
+      padding: 10px 20px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+
+      &__title {
+        font-size: pxToRem(26);
+        font-weight: bold;
+      }
+
+      &__price {
+        font-size: pxToRem(24);
+        font-weight: bold;
+        background: $clr-white;
+        padding: 5px 45px;
+        position: absolute;
+        top: -35px;
+        border-radius: 3px;
+        filter: drop-shadow(0 0 0.25rem $clr-black);
+      }
+
+      &__specific {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-size: pxToRem(16);
+        margin-top: 15px;
+      }
+
+      &__rating {
+        width: 100%;
+
+        &__container {
+          margin-top: 20px;
+
+          p {
+            display: flex;
+            justify-content: space-between;
+            font-size: pxToRem(14);
+          }
+
+          span {
+
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    &:hover {
+      border: 3px solid $clr-yellow;
+
+      .ad-card__wrapper__content__rating {
+        grid-template-rows: 1fr;
+      }
+    }
+
+    &__wrapper {
+      &__content {
+        &__rating {
+          display: grid;
+          grid-template-rows: 0fr;
+          transition: grid-template-rows 0.2s ease;
+
+          &__container {
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+}

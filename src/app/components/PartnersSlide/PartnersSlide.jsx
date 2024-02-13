@@ -26,11 +26,14 @@ const Slide = ({src, alt}) => (
 );
 
 const PartnersSlide = () => (
-   <div className="slider">
-     <div className="slide-track">
-       {images.map((image, index) => <Slide key={index} src={`/${image}`} alt={`partner-${index}`}/>)}
+   <section className="partners-slide">
+     <h2>Ils nous font <span>confiance</span></h2>
+     <div className="slider">
+       <div className="slide-track">
+         {images.map((image, index) => <Slide key={index} src={`/${image}`} alt={`partner-${index}`}/>)}
+       </div>
      </div>
-   </div>
+   </section>
 );
 
 export default PartnersSlide;

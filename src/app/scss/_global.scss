@@ -1,11 +1,37 @@
 // Colors
 
 $clr-white: #FFFFFF;
-$clr-black: #282727;
+$clr-black: #070603;
 $clr-yellow: #FFDD00;
-$clr-gray: #444444;
+$clr-gray: #171717;
 
-// Global styles
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: Poppins, sans-serif;
+}
+
+body {
+  background: $clr-black;
+  font-family: Roboto, sans-serif;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
 
 .wrapper {
   padding-left: 20px;
@@ -20,29 +46,4 @@ $clr-gray: #444444;
 .page-width {
   max-width: 1536px;
   margin: 0 auto;
-}
-
-body {
-  background: $clr-black;
-}
-
-// Resets
-
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-}
-
-button {
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
 }

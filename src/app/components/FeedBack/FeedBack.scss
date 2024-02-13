@@ -2,9 +2,10 @@
 @import "src/app/scss/functions";
 
 .feedback {
+  padding-top: 30px;
+  padding-bottom: 120px;
+
   &__card-container {
-    padding-top: 30px;
-    padding-bottom: 120px;
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -12,12 +13,12 @@
 
     &__card {
       background: $clr-white;
-      width: calc(100% - 20px);
+      width: calc(100% - 40px);
       display: flex;
       flex-shrink: 0;
       flex-direction: column;
       gap: 20px;
-      padding: 10px;
+      padding: 20px;
       border-radius: 10px;
 
       &__header {
@@ -68,6 +69,7 @@
     &__card-container {
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: unset;
+      overflow: initial;
 
     }
   }
