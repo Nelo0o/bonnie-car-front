@@ -1,0 +1,89 @@
+.slider {
+  display: flex;
+  position: relative;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.logementImg {
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  height: 415px; /* Définir une hauteur pour le conteneur */
+  width: 1240px;
+  border-radius: 12px;
+}
+
+.slide.active img {
+  max-width: 100%; /* Empêcher l'image de déborder du conteneur */
+  max-height: 100%; /* Empêcher l'image de déborder du conteneur */
+}
+.right_arrow {
+  position: absolute;
+  bottom: 40%;
+  right: 4%;
+  color: #000;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+  width: 4%;
+  height: auto;
+}
+.left_arrow {
+  position: absolute;
+  bottom: 40%;
+  left: 4%;
+  color: #000;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+  width: 4%;
+  height: auto;
+  object-fit: cover;
+}
+
+.slide.active {
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.slide_rooms {
+  position: absolute;
+  bottom: 6%;
+  right: 44%;
+  color: white;
+  font-size: 1.5vw;
+  width: 10%;
+  height: auto;
+}
+
+@media (max-width: 844px) {
+  .slider {
+    width: 55%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .slider {
+    width: 90%;
+    height: 255px;
+    margin: auto;
+    margin-left: 6%;
+  }
+  .slide_rooms {
+    opacity: 0;
+  }
+}
+
+@media (500px <= width <= 844px) {
+  .slider {
+    width: auto;
+    margin: auto;
+    padding: 0 1.5rem 0 1.5rem;
+  }
+}
