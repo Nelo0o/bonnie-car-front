@@ -5,11 +5,13 @@ import Reinsurance from "@/app/components/Reinsurance/Reinsurance";
 import AboutCard from "@/app/components/AboutCard/AboutCard";
 import FeedBack from "@/app/components/FeedBack/FeedBack";
 import ProductCard from "./components/ProductCard/ProductCard";
+import ConnexionForm from "@/app/components/ConnexionForm/ConnexionForm";
 
 export default function Home() {
   return (
     <>
-      <ProductCard />
+      <ConnexionForm />
+      {/* <ProductCard /> */}
       {/* <Header/>
        <PartnersSlide/>
        <AboutCard/>
