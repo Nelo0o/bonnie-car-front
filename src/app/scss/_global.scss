@@ -1,7 +1,10 @@
 // Colors
 
 $clr-white: #FFFFFF;
+$clr-white-hsl: rgba(255, 255, 255, 0.4);
 $clr-black: #070603;
+$clr-black-hsl: hsl(53, 35, 2, .5);
+$clr-black-hsl-2: hsl(0, 0, 9, .5);
 $clr-yellow: #FFDD00;
 $clr-gray: #171717;
 
@@ -31,6 +34,16 @@ button {
   font: inherit;
   cursor: pointer;
   outline: inherit;
+}
+
+input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  color: inherit;
 }
 
 .wrapper {

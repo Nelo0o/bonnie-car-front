@@ -1,10 +1,33 @@
-import Link from 'next/link'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
+import Dropdown from "@/app/components/DropDown/DropDown";
 import './BurgerMenu.scss'
 
-const NavLink = ({href, text}) => (
-   <Link className="burger-menu__nav__link" href={href}>{text}</Link>
-);
+const navLinks = [
+  {href: "/", text: "Accueil", subLinks: []},
+  {
+    href: "/", text: "Nos véhicules", subLinks: [
+      {href: "/motos", text: "Motos"},
+      {href: "/scooters", text: "Scooters"},
+      {href: "/voitures", text: "Voitures"}
+    ]
+  },
+  {
+    href: "/", text: "Estimation", subLinks: [
+      {href: "/", text: "Estimer un véhicule"},
+      {href: "/", text: "Côté financement"},
+      {href: "/", text: "Côté assurance"}
+    ]
+  },
+  {href: "/", text: "Services", subLinks: []},
+  {
+    href: "/", text: "A propos", subLinks: [
+      {href: "/", text: "Les démarches"},
+      {href: "/", text: "Côté moto"},
+      {href: "/", text: "Côté scooter"},
+      {href: "/", text: "Côté voiture"}
+    ]
+  },
+];
 
 const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,13 +36,13 @@ const BurgerMenu = () => {
     setIsOpen(!isOpen)
   }
   
-  const navLinks = [
-    {href: "/", text: "Accueil"},
-    {href: "/", text: "Nos véhicules"},
-    {href: "/", text: "Estimation"},
-    {href: "/", text: "Services"},
-    {href: "/", text: "A propos"},
-  ];
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isOpen]);
   
   return (
      <>
@@ -33,7 +56,11 @@ const BurgerMenu = () => {
        <div className={`burger-menu ${isOpen ? 'open' : ''}`}>
          <nav className={`burger-menu__nav`}>
            {navLinks.map((link, index) => (
-              <NavLink key={index} href={link.href} text={link.text}/>
+              <Dropdown
+                 href={link.href}
+                 text={link.text}
+                 subLinks={link.subLinks}
+                 key={index}/>
            ))}
          </nav>
        </div>

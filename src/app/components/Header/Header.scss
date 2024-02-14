@@ -13,6 +13,17 @@ header {
   z-index: 100;
   transition: all .2s;
 
+  .magic {
+    position: absolute;
+    width: 900px;
+    height: 900px;
+    background: rgba(255, 255, 255, 0.05);
+    filter: blur(100px);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 100;
+  }
+
   img[alt="logo"] {
     width: 70px;
     height: auto;

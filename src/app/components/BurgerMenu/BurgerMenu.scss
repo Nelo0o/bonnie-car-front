@@ -53,13 +53,6 @@
     flex-direction: column;
     gap: 20px;
     font-size: pxToRem(20);
-
-    &__link {
-      margin-bottom: 5px;
-      text-decoration: none;
-      color: $clr-white;
-      white-space: nowrap;
-    }
   }
 }
 
@@ -92,10 +85,13 @@
   .burger-menu {
     position: initial;
     background: transparent;
+    overflow: initial;
 
     &__nav {
       flex-direction: row;
       font-size: pxToRem(16);
+      font-weight: bold;
+      letter-spacing: 1px;
       gap: 50px;
 
       &__link {
@@ -103,6 +99,7 @@
         flex-direction: column;
         align-items: center;
         margin-top: 5px;
+        transition: color .2s;
 
         &::after {
           content: '';
@@ -114,6 +111,8 @@
         }
 
         &:hover {
+          color: $clr-yellow;
+
           &::after {
             width: 100%;
           }

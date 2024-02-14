@@ -5,10 +5,11 @@
   color: $clr-black;
   font-weight: bold;
   width: fit-content;
-  padding: 8px 10px;
-  border-radius: 10px;
+  padding: 12px 30px;
+  border-radius: 7px;
   border: solid 1px $clr-black;
   transition: all .1s;
+  text-transform: uppercase;
 
   &:hover {
     background: $clr-black;

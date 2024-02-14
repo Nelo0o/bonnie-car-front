@@ -23,10 +23,10 @@ const Header = ({showAccountIcon = true, showLogo = true}) => {
   
   return (
      <header className="wrapper" style={{
-       background: scrolled ? '#070603' : 'rgba(255, 255, 255, 0.05)',
-       backdropFilter: scrolled ? 'none' : 'blur(1px)'
+       background: scrolled ? '#070603' : 'rgba(255, 255, 255, 0.05)'
      }}>
        <>
+         <div className="magic"></div>
          <BurgerMenu/>
          {showAccountIcon && <Image src={"/assets/icons/account.svg"} alt={"account-logo"} width={200} height={200}/>}
          {showLogo && <Image src={"/assets/logo/logo.png"} alt={"logo"} width={200} height={200}/>}
