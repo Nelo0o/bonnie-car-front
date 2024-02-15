@@ -23,10 +23,9 @@
   &__text {
     max-width: 440px;
     margin-top: 30px;
-    display: none;
 
     h1 {
-      font-size: pxToRem(20);
+      font-size: pxToRem(24);
       line-height: 150%;
       text-align: center;
 
@@ -41,11 +40,13 @@
     flex-direction: column;
     text-align: center;
     margin-top: 50px;
+    width: 100%;
 
     h2 {
-      font-size: pxToRem(24);
+      font-size: pxToRem(20);
       line-height: 150%;
       margin-bottom: 48px;
+      font-weight: normal;
     }
 
     &__select {
@@ -58,25 +59,17 @@
           border-radius: 10px 10px 0 0;
           font-size: pxToRem(16);
           transition: all .1s;
+          background: $clr-black-hsl;
+          backdrop-filter: blur(20px);
+        }
 
+        .active {
+          background: $clr-black-hsl-2 !important;
+        }
 
-          &:first-child {
+        .inactive {
+          &:hover {
             background: $clr-black-hsl-2;
-            backdrop-filter: blur(20px);
-
-            &:hover {
-              background: $clr-black-hsl;
-            }
-          }
-
-          &:last-child {
-            background: $clr-black-hsl;
-            backdrop-filter: blur(20px);
-
-            &:hover {
-              background: $clr-black-hsl;
-              backdrop-filter: blur(0);
-            }
           }
         }
       }
@@ -88,8 +81,10 @@
         backdrop-filter: blur(20px);
         padding: 20px 20px;
         align-items: center;
+        justify-content: center;
         border-radius: 0 0 10px 10px;
         gap: 30px;
+        min-height: 280px;
 
         &__sell-content {
           display: flex;
@@ -135,11 +130,20 @@
               }
             }
           }
+
+          .active {
+            color: $clr-yellow;
+
+            &::after {
+              width: 100%;
+            }
+          }
         }
 
         &__inputs {
           display: flex;
-          flex-direction: column;
+          justify-content: center;
+          flex-wrap: wrap;
           gap: 20px;
           width: 100%;
           margin-bottom: 20px;
@@ -177,15 +181,21 @@
     &__text {
       display: flex;
       max-width: 510px;
+      margin: 0;
 
       h1 {
-        font-size: pxToRem(24);
+        font-size: pxToRem(48);
+        text-align: left;
       }
     }
 
     &__select-container {
       max-width: 600px;
       width: 100%;
+
+      h2 {
+        margin-bottom: 20px;
+      }
 
       &__select {
         &__btn {
@@ -194,7 +204,7 @@
         }
 
         &__container-inputs {
-          padding: 20px 100px;
+          padding: 20px 120px;
 
           &__inputs {
             display: grid;

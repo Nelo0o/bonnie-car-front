@@ -1,30 +1,32 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './MainSection.scss';
 import Button from "@/app/components/Button/Button";
 import reactStringReplace from 'react-string-replace';
 
-// Composant générique ButtonGroup
-const GenericButtonGroup = ({ items, className, handleItemClick, elementType: ElementType = 'button' }) => (
+const GenericButtonGroup = ({items, className, handleItemClick, currentActiveItem, elementType: ElementType = 'button'}) => (
    <div className={className}>
      {items.map(item =>
-        <ElementType key={item} onClick={() => handleItemClick(item)}>
+        <ElementType
+           key={item}
+           onClick={() => handleItemClick(item)}
+           className={item === currentActiveItem ? 'active' : 'inactive'}
+        >
           {item}
         </ElementType>)
      }
    </div>
 );
 
-// Composant générique InputGroup
-const GenericInputGroup = ({ items, className, elementType: ElementType = 'input' }) => (
+const GenericInputGroup = ({items, className, elementType: ElementType = 'input'}) => (
    <div className={className}>
-     {items.map(item => <ElementType type="text" placeholder={item} key={item} />)}
+     {items.map(item => <ElementType type="text" placeholder={item} key={item}/>)}
    </div>
 );
 
 const uiText = {
-  header: "Votre destination exclusive pour la vente de motos d'occasion entre particuliers. Élevez votre expérience motarde avec la référence incontestée du marché, chez nous, où passion et qualité se rencontrent",
+  header: "Vente de motos d'occasion entre particuliers.",
   subHeader: "Retrouvez le bon véhicule, avec simplicité",
   buttonText: "Voir les annonces",
   sellContent: {
@@ -34,14 +36,15 @@ const uiText = {
 }
 
 const MainSection = () => {
-  const { header: headerText, subHeader: subHeaderText, buttonText, sellContent } = uiText;
+  const {header: headerText, subHeader: subHeaderText, buttonText, sellContent} = uiText;
   const vehicleButtons = ['Motos', 'Scooters', 'Voitures'];
   const inputItems = ['Marque', 'Modèle', 'Prix', 'Energie', 'Localisation'];
   
   const [mode, setMode] = useState('Acheter');
+  const [activeVehicle, setActiveVehicle] = useState(vehicleButtons[0]);
   
-  const handleButtonClick = (buttonName) => {
-    setMode(buttonName);
+  const handleVehicleButtonClick = (buttonName) => {
+    setActiveVehicle(buttonName);
   }
   
   return (
@@ -54,26 +57,29 @@ const MainSection = () => {
            <h2>{subHeaderText}</h2>
            <div className="main-section__select-container__select">
              <GenericButtonGroup
-                className="main-section__select-container__select__btn"
+                className={`main-section__select-container__select__btn`}
                 items={['Acheter', 'Vendre']}
-                handleItemClick={handleButtonClick}
+                handleItemClick={setMode}
+                currentActiveItem={mode}
              />
              <div className="main-section__select-container__select__container-inputs">
                {mode === 'Vendre' ?
                   <div className="main-section__select-container__select__container-inputs__sell-content">
                     <p>{sellContent.text}</p>
-                    <Button buttonText={sellContent.buttonText} />
+                    <Button buttonText={sellContent.buttonText}/>
                   </div> :
                   <div>
                     <GenericButtonGroup
                        className="main-section__select-container__select__container-inputs__btn"
                        items={vehicleButtons}
+                       handleItemClick={handleVehicleButtonClick}
+                       currentActiveItem={activeVehicle}
                     />
                     <GenericInputGroup
                        className="main-section__select-container__select__container-inputs__inputs"
                        items={inputItems}
                     />
-                    <Button buttonText={buttonText} />
+                    <Button buttonText={buttonText}/>
                   </div>
                }
              </div>
