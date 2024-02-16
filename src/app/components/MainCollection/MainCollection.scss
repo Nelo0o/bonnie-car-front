@@ -1,0 +1,245 @@
+@import '/src/app/scss/global';
+@import '/src/app/scss/functions';
+
+.main-collection {
+  margin-top: 120px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+
+  h1 {
+    align-self: start;
+    color: $clr-white;
+    margin-bottom: 50px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    span {
+      color: $clr-yellow;
+    }
+  }
+
+  &__filters {
+    color: $clr-white;
+    position: absolute;
+    left: 0;
+    top: 230px;
+    background: hsl(0, 0, 9, 0.83);
+    width: calc(20% - 20px);
+    border-radius: 0 20px 20px 0;
+    padding: 20px;
+    overflow: hidden;
+    display: none;
+
+    input {
+      background: $clr-black;
+      height: 36px;
+      border: 1px solid $clr-black;
+      border-radius: 8px;
+      color: $clr-white-hsl;
+      font-size: pxToRem(14);
+      padding: 0 10px;
+
+      &:focus {
+        border-color: $clr-yellow;
+        color: $clr-white;
+      }
+    }
+  }
+
+  &__container-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+    h1 {
+      flex-direction: row;
+      gap: 10px;
+      position: relative;
+      left: 20%;
+    }
+
+    &__container-cards {
+      width: 80%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    }
+
+    &__filters {
+      left: 0;
+      display: block;
+
+      h2 {
+        margin-bottom: 15px;
+      }
+
+      &__model {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      &__price {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 20px;
+
+        input[type=range] {
+          -webkit-appearance: none;
+          height: 10px;
+          border-radius: 5px;
+          background: $clr-yellow;
+          outline: none;
+        }
+
+        &__price-content {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          input {
+            width: 70px;
+          }
+        }
+      }
+
+      &__specifics {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 20px;
+
+        &__year {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        &__couleur {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        input {
+          width: 70px;
+        }
+      }
+
+      &__energy {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      &__color {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      &__location {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        input[type=range] {
+          -webkit-appearance: none;
+          height: 10px;
+          border-radius: 5px;
+          background: $clr-yellow;
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+/* Barre de progression sur Chrome */
+input[type=range]::-webkit-slider-runnable-track {
+  background: yellow;
+}
+
+/* Barre de progression sur Firefox */
+input[type=range]::-moz-range-track {
+  background: yellow;
+}
+
+/* Barre de progression sur IE */
+input[type=range]::-ms-fill-lower {
+  background: yellow;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: yellow;
+}
+
+/* Style de la barre sur Chrome */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #232323;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Style de la barre sur Firefox */
+input[type=range]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #232323;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Style de la barre sur IE */
+input[type=range]::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  background: #232323;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Style général du select */
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  appearance: none; /* Retirer le style par défaut sur certains navigateurs */
+  -webkit-appearance: none; /* Retirer le style par défaut sur Safari */
+  -moz-appearance: none; /* Retirer le style par défaut sur Firefox */
+  background: $clr-black;
+  color: $clr-white-hsl; /* Couleur du texte */
+  cursor: pointer;
+
+  &:hover {
+    border-color: $clr-yellow;
+  }
+}
+
+/* Ajout d'une image de flèche déroulante (remplace la flèche par défaut) */
+select::-ms-expand {
+  display: none; /* Retirer la flèche par défaut sur IE */
+}
+
+select:after {
+  content: "▼";
+  position: relative;
+  top: -8px;
+  right: 10px;
+  pointer-events: none; /* L'image ne doit pas intercepter les clics */
+}

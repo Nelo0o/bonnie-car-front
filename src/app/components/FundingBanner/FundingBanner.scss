@@ -1,0 +1,44 @@
+@import '/src/app/scss/global';
+@import '/src/app/scss/functions';
+
+.funding_container {
+  position: relative;
+  height: 120px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .tirelire_img {
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+  }
+
+  .funding_txt {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    text-align: center;
+
+    p {
+      color: $clr-white;
+      font-weight: 700;
+      font-size: pxToRem(20);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 250px;
+
+    .tirelire_img {
+      display: none;
+    }
+  }
+}

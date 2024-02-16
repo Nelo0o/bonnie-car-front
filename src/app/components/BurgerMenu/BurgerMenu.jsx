@@ -6,9 +6,9 @@ const navLinks = [
   {href: "/", text: "Accueil", subLinks: []},
   {
     href: "/", text: "Nos véhicules", subLinks: [
-      {href: "/motos", text: "Motos"},
-      {href: "/scooters", text: "Scooters"},
-      {href: "/voitures", text: "Voitures"}
+      {href: "/collection", text: "Motos"},
+      {href: "/", text: "Scooters"},
+      {href: "/", text: "Voitures"}
     ]
   },
   {
